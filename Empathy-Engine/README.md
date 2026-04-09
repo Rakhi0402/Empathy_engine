@@ -41,6 +41,6 @@ User Input → Emotion Detection → Voice Modulation → Speech Generation → 
 Clone the repository
 
 ```bash
-git clone https://github.com/Rakhi0402/Empathy-engine.git
+git clone https://github.com/Rakhi0402/Darwix-AI/Empathy-engine.git
 cd Empathy-engine
 
