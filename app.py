@@ -1,3 +1,8 @@
+import os
+os.environ["TRANSFORMERS_NO_AUTO_CONVERSION"] = "1"
+os.environ["HF_TOKEN"] = "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"  
+
+
 from flask import Flask, request, jsonify, render_template, send_file
 from emotion_detector import detect_emotion
 from voice_mapper import map_emotion_to_voice
