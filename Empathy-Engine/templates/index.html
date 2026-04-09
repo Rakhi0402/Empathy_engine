@@ -1,1 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Empathy Engine</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
 
+<body>
+
+<h1>Empathy Engine 🎙️</h1>
+
+<textarea id="textInput" placeholder="Enter text here..."></textarea>
+
+<br><br>
+
+<button onclick="generateSpeech()">Generate Voice</button>
+
+<p id="emotion"></p>
+
+<audio id="audioPlayer" controls></audio>
+
+<script>
+
+async function generateSpeech(){
+
+const text = document.getElementById("textInput").value;
+
+const response = await fetch("/speak",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({text:text})
+});
+
+const data = await response.json();
+
+document.getElementById("emotion").innerText =
+"Emotion: " + data.emotion + " | Confidence: " + data.confidence;
+
+document.getElementById("audioPlayer").src="/audio";
+
+}
+
+</script>
+
+</body>
+</html>
